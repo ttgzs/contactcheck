@@ -1,0 +1,5 @@
+{
+  "name": "LegalGuard AI - 智能合同审查助手",
+  "description": "基于 Gemini 3 Pro 深度强化模型的专业合同审查工具，提供专家级法律风险识别与咨询。",
+  "requestFramePermissions": []
+}
