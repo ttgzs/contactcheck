@@ -9,12 +9,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "recharts": "^3.6.0",
-    "react": "^19.2.3",
     "@google/genai": "^1.34.0",
-    "react-dom": "^19.2.3",
     "mammoth": "1.6.0",
-    "pdfjs-dist": "4.10.38"
+    "node-fetch": "^3.3.2",
+    "pdfjs-dist": "4.10.38",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "recharts": "^3.6.0"
   },
   "devDependencies": {
     "@types/node": "^22.14.0",

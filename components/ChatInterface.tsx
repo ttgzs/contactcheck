@@ -6,9 +6,16 @@ import { chatWithLegalAgent } from '../services/gemini';
 interface Props {
   contractContext: string;
   initialSummary: string;
+  modelKey?: string;
+  variant?: string;
 }
 
-export const ChatInterface: React.FC<Props> = ({ contractContext, initialSummary }) => {
+export const ChatInterface: React.FC<Props> = ({ 
+  contractContext, 
+  initialSummary, 
+  modelKey = 'gemini',
+  variant = 'pro'
+}) => {
   const [messages, setMessages] = useState<ChatMessage[]>([
     { role: 'assistant', content: `你好！我是你的 AI 法律助理。我已经完成了对这份合同的初步审查。有什么具体的细节或者条款你想深入了解吗？例如：“违约责任是如何界定的？”或者“如何修改目前的终止条款？”` }
   ]);
@@ -31,7 +38,7 @@ export const ChatInterface: React.FC<Props> = ({ contractContext, initialSummary
     setIsLoading(true);
 
     try {
-      const response = await chatWithLegalAgent(messages, input, contractContext);
+      const response = await chatWithLegalAgent(modelKey, messages, input, contractContext, variant);
       setMessages(prev => [...prev, { role: 'assistant', content: response }]);
     } catch (err) {
       setMessages(prev => [...prev, { role: 'assistant', content: "抱歉，咨询过程中遇到了问题，请稍后再试。" }]);

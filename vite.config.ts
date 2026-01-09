@@ -11,13 +11,24 @@ export default defineConfig(({ mode }) => {
       },
       plugins: [react()],
       define: {
-        'process.env.API_KEY': JSON.stringify(env.GEMINI_API_KEY),
-        'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY)
+        'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY),
+        'process.env.OPENAI_API_KEY': JSON.stringify(env.OPENAI_API_KEY),
+        'process.env.ANTHROPIC_API_KEY': JSON.stringify(env.ANTHROPIC_API_KEY),
+        'process.env.QIANWEN_API_KEY': JSON.stringify(env.QIANWEN_API_KEY),
+        'process.env.HUOSHAN_API_KEY': JSON.stringify(env.HUOSHAN_API_KEY)
       },
       resolve: {
         alias: {
           '@': path.resolve(__dirname, '.'),
         }
-      }
+      },
+      build: {
+        rollupOptions: {
+          input: {
+            main: path.resolve(__dirname, 'index.html'),
+          },
+        },
+      },
+
     };
 });
