@@ -3,7 +3,7 @@
  
     "qianwen": {
       "provider": "aliyun",
-      "apiKey": "sk-11a7af77297642339174898215c02d1a",
+      "apiKey": "",
       "models": {
         "max": "qwen-max",
         "flash": "qwen-flash"
@@ -11,7 +11,7 @@
     },
     "huoshan": {
       "provider": "volcengine",
-      "apiKey": "af4fbc1f-393e-43f4-a0b8-8d507c4ac18d",
+      "apiKey": "",
       "models": {
         "doubao": "doubao-pro-32k",
         "huoshan": "huoshan-32k"
